@@ -1,0 +1,12 @@
+body {
+  color: #fff;
+  background-color: #0e1117;
+  margin: 0;
+}
+
+header h1 {
+  width: 100%;
+  margin: 0px;
+  padding: var(--base-size-16, 15px);
+  background-color: #010409;
+}
