@@ -48,6 +48,9 @@ function saveUserDetails(response) {
 
 function printUserInfo(userInfo) {
   const userContainer = document.querySelector(".user-container");
+
+  userContainer.classList.toggle("visible");
+
   const avatar = userContainer.querySelector(".user-avatar");
   const profileLink = userContainer.querySelector(".user-profile-link");
   const userName = userContainer.querySelector(".user-name");
@@ -68,12 +71,12 @@ function printUserInfo(userInfo) {
   );
 
   userName.innerHTML = `${userInfo.userName}'s profile`;
-  fullName.innerHTML = `name: ${userInfo.fullName}`;
-  company.innerHTML = `company: ${userInfo.company}`;
-  location.innerHTML = `location: ${userInfo.location}`;
-  blog.innerHTML = `blog: ${userInfo.blog}`;
-  followers.innerHTML = `followers: ${userInfo.followers}`;
-  following.innerHTML = `following: ${userInfo.following}`;
-  publicRepo.innerHTML = `public repository: ${userInfo.publicRepo}`;
-  createdAt.innerHTML = `created at: ${userInfo.createdAt}`;
+  fullName.innerHTML = `name:   ${userInfo.fullName}`;
+  company.innerHTML = `company:   ${userInfo.company}`;
+  location.innerHTML = `location:   ${userInfo.location}`;
+  blog.innerHTML = `blog:   ${userInfo.blog}`;
+  followers.innerHTML = `followers:   ${userInfo.followers}`;
+  following.innerHTML = `following:   ${userInfo.following}`;
+  publicRepo.innerHTML = `public repository:    ${userInfo.publicRepo}`;
+  createdAt.innerHTML = `created at:    ${userInfo.createdAt}`;
 }

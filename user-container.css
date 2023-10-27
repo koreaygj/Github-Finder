@@ -1,0 +1,90 @@
+.user-container.visible {
+  width: 100%;
+  display: flex;
+  animation: fadein 0.3s;
+  opacity: 1;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.user-container {
+  opacity: 0;
+}
+
+.user-profile {
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.user-profile-link {
+  color: #fff;
+  padding-block: 10px;
+  font-size: large;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #30363d;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.user-profile-link:hover {
+  transition: transform, 0.3s;
+  transform: translateY(10);
+}
+
+.user-avatar {
+  width: 300px;
+}
+
+.user-right-container {
+  width: 100%;
+  padding-top: 32px;
+  display: grid;
+}
+
+.user-status {
+  margin-top: 17px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: 600;
+}
+
+.user-followers {
+  padding: 10px;
+  margin: 10px;
+  background-color: #30363d;
+}
+
+.user-following {
+  padding: 10px;
+  margin: 10px;
+  background-color: #30363d;
+}
+
+.user-public-repo {
+  padding: 10px;
+  margin: 10px;
+  background-color: #30363d;
+}
+
+.user-details {
+  padding: 10px;
+  width: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.user-details .content {
+  padding: 10px;
+  border: solid;
+  border-color: #30363c;
+}
