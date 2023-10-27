@@ -1,0 +1,16 @@
+.search-container {
+  padding-left: 20px;
+  padding-bottom: 20px;
+  border: solid;
+  border-color: #30363c;
+}
+
+.search {
+  width: 80%;
+  background-color: #30363c;
+  color: #a59c9c;
+  font-size: 24px;
+  border: 0;
+  border-radius: 6px;
+  text-decoration: underline;
+}
