@@ -12,6 +12,8 @@ export async function getRepoDetails(userName) {
     const response = await fetch(URL, options);
     if (!response.ok) throw new Error("404 error");
     const json = await response.json();
+    const prevList = document.querySelector(".repo-list");
+    prevList.remove();
     printRepos(json);
     showRepos("true");
     return "success";
@@ -22,10 +24,13 @@ export async function getRepoDetails(userName) {
 }
 
 function printRepos(repos) {
-  const repoList = document.querySelector(".repo-list");
+  const repoContainer = document.querySelector(".user-repo-container");
+  const repoList = document.createElement("div");
+  repoList.className = "repo-list";
   for (let i = 0; i < 10; i++) {
     repoList.appendChild(getRepo(repos[i]));
   }
+  repoContainer.appendChild(repoList);
 }
 
 function getRepo(repo) {
