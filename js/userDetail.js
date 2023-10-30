@@ -24,11 +24,14 @@ export async function getUserDetails(userName) {
     const response = await fetch(URL, options);
     if (!response.ok) throw new Error("404 error");
     const json = await response.json();
-    console.log(json);
     saveUserDetails(json);
     printUserInfo(userInfo);
+    showUserInfo(true);
+    printNotFound(false);
     return "success";
   } catch (err) {
+    showUserInfo(false);
+    printNotFound(true);
     return "404";
   }
 }
@@ -49,8 +52,6 @@ function saveUserDetails(response) {
 function printUserInfo(userInfo) {
   const userContainer = document.querySelector(".user-container");
 
-  userContainer.classList.toggle("visible");
-
   const avatar = userContainer.querySelector(".user-avatar");
   const profileLink = userContainer.querySelector(".user-profile-link");
   const userName = userContainer.querySelector(".user-name");
@@ -62,6 +63,8 @@ function printUserInfo(userInfo) {
   const following = userContainer.querySelector(".user-following");
   const publicRepo = userContainer.querySelector(".user-public-repo");
   const createdAt = userContainer.querySelector(".user-created-at");
+
+  const githubCommitLog = userContainer.querySelector(".github-grass");
 
   avatar.src = userInfo.avatar;
   profileLink.setAttribute("href", `https://github.com/${userInfo.userName}`);
@@ -79,4 +82,23 @@ function printUserInfo(userInfo) {
   following.innerHTML = `following:   ${userInfo.following}`;
   publicRepo.innerHTML = `public repository:    ${userInfo.publicRepo}`;
   createdAt.innerHTML = `created at:    ${userInfo.createdAt}`;
+
+  githubCommitLog.src = `https://ghchart.rshah.org/${userInfo.userName}`;
+}
+
+function showUserInfo(show) {
+  const userContainer = document.querySelector(".user-container");
+  if (show) {
+    if (!userContainer.classList.contains("visible"))
+      userContainer.classList.add("visible");
+  } else {
+    if (userContainer.classList.contains("visible"))
+      userContainer.classList.remove("visible");
+  }
+}
+
+function printNotFound(show) {
+  const notFound = document.querySelector(".not-found");
+  if (show) notFound.classList.add("visible");
+  else notFound.classList.remove("visible");
 }

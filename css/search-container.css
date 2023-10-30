@@ -1,8 +1,10 @@
 .search-container {
-  padding-left: 20px;
-  padding-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
   border: solid;
   border-color: #30363c;
+  padding-bottom: 35px;
 }
 
 .search {
