@@ -35,6 +35,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+}
+
+.repo-name:hover {
+  opacity: 0.9;
+  background-color: #30363d;
 }
 
 .repo-details {

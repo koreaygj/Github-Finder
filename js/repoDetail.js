@@ -50,6 +50,10 @@ function getRepo(repo) {
   repoWatchers.className = "repo-item";
 
   repoName.innerHTML = repo.name;
+  repoName.addEventListener("click", () => {
+    window.open(`${repo.html_url}`);
+  });
+
   repoLanguage.innerHTML = repo.language;
   repoStarCnt.innerHTML = `stars: ${repo.stargazers_count}`;
   repoForkCnt.innerHTML = `forks: ${repo.forks_count}`;
