@@ -2,6 +2,7 @@
   margin-left: 10px;
   margin-right: 10px;
   opacity: 0;
+  display: none;
 }
 
 @keyframes fadein {
@@ -14,6 +15,7 @@
 }
 
 .user-repo-container.visible {
+  display: grid;
   animation: fadein 0.3s;
   opacity: 1;
 }

@@ -1,4 +1,5 @@
 import { config } from "./githubToken.js";
+import { showSpinner } from "./loading.js";
 
 const baseURL = "https://api.github.com/";
 
@@ -15,10 +16,12 @@ export async function getRepoDetails(userName) {
     const prevList = document.querySelector(".repo-list");
     prevList.remove();
     printRepos(json);
+    showSpinner(false);
     showRepos("true");
     return "success";
   } catch (err) {
-    showRepos("false");
+    showRepos(false);
+    showSpinner(false);
     return "404";
   }
 }

@@ -1,0 +1,20 @@
+.spinner-container {
+  justify-content: center;
+  opacity: 0;
+  display: none;
+}
+
+.spinner-container.visible {
+  display: grid;
+  opacity: 1;
+  animation: fadein 0.01s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

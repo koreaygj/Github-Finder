@@ -1,4 +1,5 @@
 import { config } from "./githubToken.js";
+import { showSpinner } from "./loading.js";
 
 const baseURL = "https://api.github.com/";
 const userInfo = {
@@ -15,6 +16,7 @@ const userInfo = {
 };
 
 export async function getUserDetails(userName) {
+  showSpinner(true);
   const URL = `${baseURL}users/${userName}`;
   const options = {
     method: "GET",
@@ -32,6 +34,7 @@ export async function getUserDetails(userName) {
   } catch (err) {
     showUserInfo(false);
     printNotFound(true);
+    showSpinner(false);
     return "404";
   }
 }
